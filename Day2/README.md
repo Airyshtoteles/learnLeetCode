@@ -122,4 +122,4 @@ int maxProfit(const std::vector<int>& prices) {
 - Dua transaksi: LeetCode 123
 - K transaksi: LeetCode 188
 
-Kalau mau lanjut ke variasi berikutnya, tinggal bilang ya.
+  
