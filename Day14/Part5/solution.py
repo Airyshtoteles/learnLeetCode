@@ -9,8 +9,8 @@ class Solution:
         n = len(maze)
         S = None
         X = None
-        portals = []
-        empties = []
+        initial_portals: List[Pos] = []
+        empty_cells: List[Pos] = []  # only 'E' cells for remaps
         for i in range(n):
             for j in range(len(maze[i])):
                 c = maze[i][j]
@@ -19,18 +19,22 @@ class Solution:
                 elif c == 'X':
                     X = (i, j)
                 if c == 'P':
-                    portals.append((i,j))
-                if c == 'E' or c == 'P':
-                    empties.append((i,j))
+                    initial_portals.append((i,j))
+                if c == 'E':
+                    empty_cells.append((i,j))
         if S is None or X is None:
             return -1
-        pcount = len(portals)
+        pcount = len(initial_portals)
 
         def portals_for_phase(phase: int):
-            if pcount <= 0 or not empties:
+            # Phase 0: portals are at their initial 'P' positions
+            if phase == 0:
+                return sorted(list(initial_portals))
+            # Subsequent phases: remap to 'E' cells only
+            if pcount <= 0 or not empty_cells:
                 return []
-            m = len(empties)
-            sel = [empties[(phase + k) % m] for k in range(pcount)]
+            m = len(empty_cells)
+            sel = [empty_cells[(phase + k) % m] for k in range(pcount)]
             sel.sort()
             return sel
 
