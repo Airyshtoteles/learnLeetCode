@@ -22,7 +22,7 @@ string minWindow(string s, string t){
         // backward shrink
         k = m - 1; j = end;
         while(j >= pos){ if (s[j]==t[k]){ --k; if (k < 0) break; } --j; }
-        int start = j + 1;
+    int start = j;
         string cand = s.substr(start, end - start + 1);
         if (best.empty() || cand.size() < best.size()) best = cand;
         i = start + 1; // move start forward for next search

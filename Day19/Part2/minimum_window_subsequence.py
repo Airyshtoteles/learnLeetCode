@@ -32,7 +32,7 @@ def minWindow(s: str, t: str) -> str:
                 if k < 0:
                     break
             j -= 1
-        start = j + 1
+        start = j
         cand = s[start:end+1]
         if not best or len(cand) < len(best):
             best = cand
