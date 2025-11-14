@@ -50,7 +50,6 @@ def main():
     import sys
     data = sys.stdin.read().strip().split()
     if not data:
-        # Simple demo
         demo = [3, 1, 4, 1, 5]
         print(min_shots(demo))
         return
