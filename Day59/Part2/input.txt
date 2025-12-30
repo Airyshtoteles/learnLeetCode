@@ -1,0 +1,8 @@
+100 7
+Attack 10
+Guard 0
+Attack 20
+Guard 0
+Attack 10
+Attack 50
+Guard 0

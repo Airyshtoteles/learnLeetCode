@@ -205,7 +205,7 @@ int main() {
     // But I'll add a heuristic: check lengths around N?
     // Or check lengths where MaxZeros is high?
     // Let's just check all lengths if N <= 2000.
-    // If N > 2000, we rely on the set.
+    // If N > 2000, we rely on
     
     if (N <= 2000) {
         for (int len = 1; len <= N; ++len) {
